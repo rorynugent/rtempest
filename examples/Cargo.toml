@@ -1,0 +1,18 @@
+[package]
+name = "examples"
+publish = false
+
+[dev-dependencies]
+rtempest = { path = "../" }
+
+[[example]]
+name = "udp"
+path = "udp.rs"
+
+[[example]]
+name = "udp with cache"
+path = "udp_cache.rs"
+
+[[example]]
+name = "udp subscribe"
+path = "udp_subscribe.rs"
