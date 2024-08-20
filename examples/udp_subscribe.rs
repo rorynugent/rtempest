@@ -1,4 +1,4 @@
-use rtempest::{data::EventType, udp::Tempest};
+use rtempest::{udp::data::EventType, udp::Tempest};
 
 #[tokio::main]
 async fn main() {

@@ -1,6 +1,6 @@
-use rtempest::mock::MockSender;
-use rtempest::test_common::*;
-use rtempest::{data::EventType, udp::Tempest};
+use rtempest::udp::mock::MockSender;
+use rtempest::udp::test_common::*;
+use rtempest::{udp::data::EventType, udp::Tempest};
 
 const PORT: u16 = 50222;
 

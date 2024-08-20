@@ -1,6 +1,10 @@
 //! Primary interface for WeatherFlow Tempest weather data over UDP
 
-use crate::data::*;
+pub mod data;
+pub mod mock;
+pub mod test_common;
+
+use crate::udp::data::*;
 use log::trace;
 use serde_json::{Error, Value};
 use std::net::Ipv4Addr;
@@ -824,8 +828,8 @@ impl Tempest {
 #[cfg(test)]
 mod test {
     use super::*;
-    use crate::mock::MockSender;
-    use crate::test_common::*;
+    use crate::udp::mock::MockSender;
+    use crate::udp::test_common::*;
 
     async fn test_setup(caching: bool) -> (MockSender, Tempest, Receiver<EventType>, u16) {
         let mock = MockSender::bind();
