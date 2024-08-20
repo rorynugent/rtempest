@@ -15,7 +15,11 @@
 //! ## References
 //! - [`WeatherFlow UDP`](https://weatherflow.github.io/Tempest/api/udp/v171/)
 
+#[cfg(feature = "udp")]
+pub mod udp;
 pub mod data;
 pub mod mock;
 pub mod test_common;
-pub mod udp;
+
+#[cfg(feature = "http")]
+pub mod http;

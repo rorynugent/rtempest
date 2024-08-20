@@ -4,10 +4,13 @@ version = "0.1.0"
 edition = "2021"
 
 [features]
-default = []
+default = ["udp"]
+udp = [ "dep:serde", "dep:serde_json", "dep:tokio" ]
+http = [ "dep:reqwest" ]
 
 [dependencies]
 log = "0.4.21"
-serde = { version = "1.0", features = ["derive"] }
-serde_json = "1.0.114"
-tokio = { version = "1.36", features = ["macros", "net", "rt-multi-thread", "sync"] }
+reqwest = { version = "0.12.7", optional = true }
+serde = { version = "1.0", features = ["derive"], optional = true}
+serde_json = { version="1.0.114", optional = true }
+tokio = { version = "1.36", features = ["macros", "net", "rt-multi-thread", "sync"], optional = true }
