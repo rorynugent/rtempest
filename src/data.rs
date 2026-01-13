@@ -476,12 +476,15 @@ pub struct LightningStrikeEvent {
 
 impl fmt::Display for LightningStrikeEvent {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        write!(f, "LightningStrikeEvent Data (Timestamp: {}, Serial Number: {}, Hub Serial Number: {}, Strike Distance: {} km, Energy: {})",
-        self.get_timestamp(),
-        self.get_serial_number(),
-        self.get_hub_sn(),
-        self.get_strike_distance(),
-        self.get_strike_energy())
+        write!(
+            f,
+            "LightningStrikeEvent Data (Timestamp: {}, Serial Number: {}, Hub Serial Number: {}, Strike Distance: {} km, Energy: {})",
+            self.get_timestamp(),
+            self.get_serial_number(),
+            self.get_hub_sn(),
+            self.get_strike_distance(),
+            self.get_strike_energy()
+        )
     }
 }
 
@@ -518,12 +521,15 @@ pub struct RapidWindEvent {
 
 impl fmt::Display for RapidWindEvent {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        write!(f, "RapidWindEvent Data (Timestamp: {}, Serial Number: {}, Hub Serial Number: {}, Wind Speed: {} m/s, Wind Direction: {}°)", 
-        self.get_timestamp(),
-        self.get_serial_number(),
-        self.get_hub_sn(),
-        self.get_wind_speed_mps(),
-        self.get_wind_direction())
+        write!(
+            f,
+            "RapidWindEvent Data (Timestamp: {}, Serial Number: {}, Hub Serial Number: {}, Wind Speed: {} m/s, Wind Direction: {}°)",
+            self.get_timestamp(),
+            self.get_serial_number(),
+            self.get_hub_sn(),
+            self.get_wind_speed_mps(),
+            self.get_wind_direction()
+        )
     }
 }
 
@@ -560,18 +566,20 @@ pub struct ObservationAirEvent {
 
 impl fmt::Display for ObservationAirEvent {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        write!(f, "ObservationAirEvent Data (Timestamp: {}, Serial Number: {}, Hub SN: {}, Firmware Revision: {}, Station Pressure: {}, Air Temperature: {}, Relative Humidity: {}%, Lightning Strike Count: {}, Lightning Strike Avg Distance: {} km, Battery Voltage: {}V, Report Interval: {})",
-        self.get_timestamp().unwrap_or(0.0),
-        self.get_serial_number(),
-        self.get_hub_sn(),
-        self.get_firmware_revision(),
-        self.get_station_pressure().unwrap_or(0.0),
-        self.get_air_temperature().unwrap_or(0.0),
-        self.get_relative_humidity().unwrap_or(0.0),
-        self.get_lightning_count().unwrap_or(0.0),
-        self.get_lightning_avg_distance().unwrap_or(0.0),
-        self.get_battery_voltage().unwrap_or(0.0),
-        self.get_report_interval().unwrap_or(0.0),
+        write!(
+            f,
+            "ObservationAirEvent Data (Timestamp: {}, Serial Number: {}, Hub SN: {}, Firmware Revision: {}, Station Pressure: {}, Air Temperature: {}, Relative Humidity: {}%, Lightning Strike Count: {}, Lightning Strike Avg Distance: {} km, Battery Voltage: {}V, Report Interval: {})",
+            self.get_timestamp().unwrap_or(0.0),
+            self.get_serial_number(),
+            self.get_hub_sn(),
+            self.get_firmware_revision(),
+            self.get_station_pressure().unwrap_or(0.0),
+            self.get_air_temperature().unwrap_or(0.0),
+            self.get_relative_humidity().unwrap_or(0.0),
+            self.get_lightning_count().unwrap_or(0.0),
+            self.get_lightning_avg_distance().unwrap_or(0.0),
+            self.get_battery_voltage().unwrap_or(0.0),
+            self.get_report_interval().unwrap_or(0.0),
         )
     }
 }
@@ -904,7 +912,9 @@ pub struct ObservationEvent {
 
 impl fmt::Display for ObservationEvent {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        write!(f, "ObservationEvent Data (Timestamp: {}, Serial Number: {}, Hub SN: {}, Firmware Revision: {}, Wind Lull: {} m/s, Wind Avg: {} m/s, Wind Gust: {} m/s, Wind Direction: {}°, Wind Sample Interval: {}s, Station Pressure: {} MB, Air Temperature: {}°C, Relative Humidity: {}%, Illuminance: {} lux, UV: {} Index, Solar Radiation: {} W/m^2, Rain Previous Minute: {} mm, Precipitation: {}, Lightning Strike Avg Distance: {} km, Lightning Strike Count: {}, Battery: {}V, Report Interval: {} min(s)",
+        write!(
+            f,
+            "ObservationEvent Data (Timestamp: {}, Serial Number: {}, Hub SN: {}, Firmware Revision: {}, Wind Lull: {} m/s, Wind Avg: {} m/s, Wind Gust: {} m/s, Wind Direction: {}°, Wind Sample Interval: {}s, Station Pressure: {} MB, Air Temperature: {}°C, Relative Humidity: {}%, Illuminance: {} lux, UV: {} Index, Solar Radiation: {} W/m^2, Rain Previous Minute: {} mm, Precipitation: {}, Lightning Strike Avg Distance: {} km, Lightning Strike Count: {}, Battery: {}V, Report Interval: {} min(s)",
             self.get_timestamp().unwrap_or(0.0),
             self.get_serial_number(),
             self.get_hub_sn(),
@@ -1187,16 +1197,19 @@ pub struct DeviceStatusEvent {
 
 impl fmt::Display for DeviceStatusEvent {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        write!(f, "DeviceStatusEvent Data (Timestamp: {}, Serial Number: {}, Hub SN: {}, Firmware Revision: {}, Uptime: {}, Battery Voltage: {}V, RSSI: {}, Hub RSSI: {}, Debug Enabled: {})",
-        self.get_timestamp(),
-        self.get_serial_number(),
-        self.get_hub_sn(),
-        self.get_firmware_revision(),
-        self.get_uptime(),
-        self.get_battery_voltage(),
-        self.get_rssi(),
-        self.get_hub_rssi(),
-        self.debugging_enabled())
+        write!(
+            f,
+            "DeviceStatusEvent Data (Timestamp: {}, Serial Number: {}, Hub SN: {}, Firmware Revision: {}, Uptime: {}, Battery Voltage: {}V, RSSI: {}, Hub RSSI: {}, Debug Enabled: {})",
+            self.get_timestamp(),
+            self.get_serial_number(),
+            self.get_hub_sn(),
+            self.get_firmware_revision(),
+            self.get_uptime(),
+            self.get_battery_voltage(),
+            self.get_rssi(),
+            self.get_hub_rssi(),
+            self.debugging_enabled()
+        )
     }
 }
 
@@ -1256,15 +1269,18 @@ pub struct HubStatusEvent {
 
 impl fmt::Display for HubStatusEvent {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        write!(f, "HubStatusEvent Data (Timestamp: {}, Serial Number: {}, Firmware Revision: {}, Uptime: {}, RSSI: {}, Reset Flags: \"{}\", Radio Status: {}, Radio Network ID: {})",
-        self.get_timestamp(),
-        self.get_serial_number(),
-        self.get_firmware_revision(),
-        self.get_uptime(),
-        self.get_rssi(),
-        self.get_reset_flags(),
-        self.get_radio_status(),
-        self.get_radio_network_id())
+        write!(
+            f,
+            "HubStatusEvent Data (Timestamp: {}, Serial Number: {}, Firmware Revision: {}, Uptime: {}, RSSI: {}, Reset Flags: \"{}\", Radio Status: {}, Radio Network ID: {})",
+            self.get_timestamp(),
+            self.get_serial_number(),
+            self.get_firmware_revision(),
+            self.get_uptime(),
+            self.get_rssi(),
+            self.get_reset_flags(),
+            self.get_radio_status(),
+            self.get_radio_network_id()
+        )
     }
 }
 
