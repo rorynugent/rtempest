@@ -1,7 +1,9 @@
 [package]
 name = "rtempest"
 version = "0.1.1"
-edition = "2021"
+edition = "2024"
+description = "A crate for retrieving and parsing WeatherFlow Tempest weather station data."
+license = "Apache-2.0"
 
 [features]
 default = []
