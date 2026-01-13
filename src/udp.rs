@@ -56,12 +56,12 @@ impl Tempest {
     }
 
     /// Grabs the shared read lock of the inner
-    fn read_inner(&self) -> RwLockReadGuard<Inner> {
+    fn read_inner(&self) -> RwLockReadGuard<'_, Inner> {
         self.inner.read().expect("Unable to acquire read lock")
     }
 
     /// Grabs the exclusive write lock of the inner
-    fn write_inner(&self) -> RwLockWriteGuard<Inner> {
+    fn write_inner(&self) -> RwLockWriteGuard<'_, Inner> {
         self.inner.write().expect("Unable to acquire write lock")
     }
 
@@ -631,7 +631,7 @@ impl Tempest {
                                 }
 
                                 // send event if no serial number provided or on a match
-                                if station_filter.clone().map_or(true, |stations| {
+                                if station_filter.clone().is_none_or(|stations| {
                                     stations.contains(&event.get_serial_number())
                                 }) {
                                     let _ = tx
@@ -654,7 +654,7 @@ impl Tempest {
                                 }
 
                                 // send event if no serial number provided or on a match
-                                if station_filter.clone().map_or(true, |stations| {
+                                if station_filter.clone().is_none_or(|stations| {
                                     stations.contains(&event.get_serial_number())
                                 }) {
                                     let _ = tx.send(EventType::Air(event)).await.inspect_err(|e| {
@@ -680,7 +680,7 @@ impl Tempest {
                                 }
 
                                 // send event if no serial number provided or on a match
-                                if station_filter.clone().map_or(true, |stations| {
+                                if station_filter.clone().is_none_or(|stations| {
                                     stations.contains(&event.get_serial_number())
                                 }) {
                                     let _ = tx.send(EventType::Sky(event)).await.inspect_err(|e| {
@@ -702,7 +702,7 @@ impl Tempest {
                                 }
 
                                 // send event if no serial number provided or on a match
-                                if station_filter.clone().map_or(true, |stations| {
+                                if station_filter.clone().is_none_or(|stations| {
                                     stations.contains(&event.get_serial_number())
                                 }) {
                                     let _ = tx
@@ -725,7 +725,7 @@ impl Tempest {
                                 }
 
                                 // send event if no serial number provided or on a match
-                                if station_filter.clone().map_or(true, |stations| {
+                                if station_filter.clone().is_none_or(|stations| {
                                     stations.contains(&event.get_serial_number())
                                 }) {
                                     let _ = tx.send(EventType::RapidWind(event)).await.inspect_err(
@@ -749,7 +749,7 @@ impl Tempest {
                                 }
 
                                 // send event if no serial number provided or on a match
-                                if station_filter.clone().map_or(true, |stations| {
+                                if station_filter.clone().is_none_or(|stations| {
                                     stations.contains(&event.get_serial_number())
                                 }) {
                                     let _ =
@@ -772,7 +772,7 @@ impl Tempest {
                                 }
 
                                 // send event if no serial number provided or on a match
-                                if station_filter.clone().map_or(true, |stations| {
+                                if station_filter.clone().is_none_or(|stations| {
                                     stations.contains(&event.get_serial_number())
                                 }) {
                                     let _ = tx.send(EventType::Lightning(event)).await.inspect_err(
@@ -796,7 +796,7 @@ impl Tempest {
                                 }
 
                                 // send event if no serial number provided or on a match
-                                if station_filter.clone().map_or(true, |stations| {
+                                if station_filter.clone().is_none_or(|stations| {
                                     stations.contains(&event.get_serial_number())
                                 }) {
                                     let _ = tx
