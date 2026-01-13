@@ -1,6 +1,6 @@
 # rTempest 🫖
 
-#### [Changelog](https://github.com/rorynugent/rtempest/blob/CHANGELOG.md) | [Docs](https://rorynugent.github.io/rtempest/)
+#### [Changelog](https://github.com/rorynugent/rtempest/blob/main/CHANGELOG.md) | [Docs](https://rorynugent.github.io/rtempest/)
 
 ![CI](https://github.com/rorynugent/rtempest/actions/workflows/ci.yml/badge.svg)
 
