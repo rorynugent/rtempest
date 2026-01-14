@@ -6,7 +6,8 @@
 [crates-badge]: https://img.shields.io/crates/v/rtempest
 [crates-url]: https://crates.io/crates/rtempest
 
-#### [Changelog](https://github.com/rorynugent/rtempest/blob/main/CHANGELOG.md) | [Docs](https://rorynugent.github.io/rtempest/)
+[Changelog](https://github.com/rorynugent/rtempest/blob/main/CHANGELOG.md) |
+[Docs](https://docs.rs/rtempest/latest/rtempest/)
 
 ## Overview
 
